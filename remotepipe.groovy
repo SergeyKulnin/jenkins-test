@@ -1,7 +1,6 @@
-cp 1251
-echo "Название сборки: $BUILD_DISPLAY_NAME"
+echo "Name of Build: $BUILD_DISPLAY_NAME"
 sleep 5
-echo "Номер сборки: $BUILD_NUMBER"
+echo "Buil number: $BUILD_NUMBER"
 sleep 7
 whoami
 sleep 5
