@@ -8,8 +8,7 @@ pipeline {
 
             steps { script {
                 sleep 7
-                whoami
-                sleep 5
+                
                 ip adress
                 hostname
                 sleep 7
