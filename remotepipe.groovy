@@ -18,7 +18,7 @@ pipeline {
         }
 
         stage('Execute script'){
-            step { script{
+            steps { script{
                 sh "/home/jenkins_script/jen.sh"
                 sleep 10
             }}
