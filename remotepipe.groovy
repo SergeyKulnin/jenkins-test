@@ -1,4 +1,4 @@
-chcp 1251
+cp 1251
 echo "Название сборки: $BUILD_DISPLAY_NAME"
 sleep 5
 echo "Номер сборки: $BUILD_NUMBER"
