@@ -1,7 +1,4 @@
-pipeline{
-    agent { 
-        label 'user1-virtual-machine' 
-        }
+chcp 1251
 echo "Название сборки: $BUILD_DISPLAY_NAME"
 sleep 5
 echo "Номер сборки: $BUILD_NUMBER"
@@ -11,5 +8,3 @@ sleep 5
 ip adress
 hostname
 sleep 7
-
-}
