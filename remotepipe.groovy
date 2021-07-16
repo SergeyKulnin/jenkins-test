@@ -1,9 +1,27 @@
-echo "Name of Build: $BUILD_DISPLAY_NAME"
-sleep 5
-echo "Buil number: $BUILD_NUMBER"
-sleep 7
-whoami
-sleep 5
-ip adress
-hostname
-sleep 7
+pipeline {
+
+    agent {label "user1-virtual-machine" }
+
+    stages {
+
+        stage('Connection test') {
+
+            steps { script {
+                sleep 7
+                whoami
+                sleep 5
+                ip adress
+                hostname
+                sleep 7
+                        }}
+
+        }
+
+        stage('Execute script'){
+            step { script{
+                sh "/home/jenkins_script/jen.sh"
+                sleep 10
+            }}
+        }
+    }    
+}
