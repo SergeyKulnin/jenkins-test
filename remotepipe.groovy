@@ -9,8 +9,8 @@ pipeline {
             steps { script {
                 sleep 7
                 
-                echo ip address
-                echo hostname
+                echo "ip address"
+                echo "hostname"
                 sleep 7
                         }}
 
