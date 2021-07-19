@@ -1,6 +1,6 @@
 pipeline {
 
-    agent {label "user1-virtual-machine" }
+    agent {label "slave1, slave2" }
 
     stages {
 
