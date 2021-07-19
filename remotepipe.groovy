@@ -22,5 +22,13 @@ pipeline {
                 sleep 10
             }}
         }
+
+         stage('Bash test'){
+            steps { 
+                sh '''#!/bin/bash
+                 echo "hello world" 
+         '''
+            }
+        }
     }    
 }
