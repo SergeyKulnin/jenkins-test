@@ -26,7 +26,7 @@ pipeline {
          stage('Bash test'){
             steps { 
                 sh '''#!/bin/bash
-                 echo "hello world" 
+                 sh "/home/user1/jenkins_script/jen.sh" 
          '''
             }
         }
