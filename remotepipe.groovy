@@ -9,8 +9,13 @@ pipeline {
             steps { script {
                 sleep 7
                 
-                echo "ip address"
-                echo "hostname"
+                sh '''#!/bin/bash
+                 whoami
+                 sleep 4
+                 ip address
+                 sleep 4
+                 hostname 
+         '''
                 sleep 7
                         }}
 
