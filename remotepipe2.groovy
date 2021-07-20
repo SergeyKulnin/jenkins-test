@@ -5,13 +5,6 @@ pipeline {
         stage('Update remote resources') {
             echoCyan "Update remote resources"
             steps { script {
-
-timestamps {
-        ansiColor('xterm'){
-            echoCyan "Update remote resources"
-        }}
-
-
                 sleep 7                
                 sh '''#!/bin/bash
                 echo -en "\033[37;1;41m Информация \033[0m \n"
