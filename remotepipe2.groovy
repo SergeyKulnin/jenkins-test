@@ -8,7 +8,7 @@ pipeline {
 
             steps { script {
                 sleep 7
-                echoCyan info
+                echoCyan "info"
                 sh '''#!/bin/bash
                 echo -en "\033[37;1;41m Информация \033[0m \n"
                  whoami
