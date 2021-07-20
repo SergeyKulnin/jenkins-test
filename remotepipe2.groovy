@@ -3,7 +3,6 @@ pipeline {
 
     stages {
         stage('Update remote resources') {
-            echoCyan "Update remote resources"
             steps { script {
                 sleep 7                
                 sh '''#!/bin/bash
