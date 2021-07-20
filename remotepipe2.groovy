@@ -1,5 +1,5 @@
 pipeline {
-
+ansiColor('xterm'){ansiblePlaybook colorized: true, installation: 'ansible2.5.11', inventory: 'inventory/hosts', playbook: 'playbooks/example.yml'}
     agent {label "slave2" }
 
     stages {
