@@ -1,11 +1,10 @@
 pipeline {
-ansiColor('xterm'){ansiblePlaybook colorized: true, installation: 'ansible2.5.11', inventory: 'inventory/hosts', playbook: 'playbooks/example.yml'}
     agent {label "slave2" }
 
     stages {
 
         stage('Update remote resources') {
-
+ansiColor('xterm'){ansiblePlaybook colorized: true, installation: 'ansible2.5.11', inventory: 'inventory/hosts', playbook: 'playbooks/example.yml'}
             steps { script {
                 sleep 7                
                 sh '''#!/bin/bash
