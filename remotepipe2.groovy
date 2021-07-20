@@ -8,9 +8,9 @@ pipeline {
 
             steps { script {
                 sleep 7
-                
+                echoCyan info
                 sh '''#!/bin/bash
-                echoGreen 'Info'
+                echo -en "\033[37;1;41m Информация \033[0m \n"
                  whoami
                  sleep 4
                  ip address
