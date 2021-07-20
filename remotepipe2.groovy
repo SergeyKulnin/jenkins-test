@@ -1,13 +1,13 @@
 pipeline {
     agent {label "slave2" }
 
-    stages {
 
-        stage('Update remote resources') {
-
-    timestamps {
+timestamps {
         ansiColor('xterm'){
 
+
+    stages {
+        stage('Update remote resources') {
             echoCyan "Update remote resources"
             steps { script {
                 sleep 7                
@@ -21,13 +21,8 @@ pipeline {
          '''
                 sleep 7
                         }}
+        }
+    }  
 
         }}
-
-        }
-
-        
-    }
-    
-        
 }
