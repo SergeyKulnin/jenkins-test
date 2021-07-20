@@ -1,6 +1,8 @@
 pipeline {
     agent {label "slave2" }
-
+options {
+        ansiColor('xterm')
+    }
     stages {
 
         stage('Update remote resources') {
