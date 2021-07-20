@@ -7,8 +7,7 @@ pipeline {
         stage('Update remote resources') {
 
             steps { script {
-                sleep 7
-                echoCyan "info"
+                sleep 7                
                 sh '''#!/bin/bash
                 echo -en "\033[37;1;41m Информация \033[0m \n"
                  whoami
