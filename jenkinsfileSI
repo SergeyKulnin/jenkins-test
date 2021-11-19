@@ -16,7 +16,8 @@ pipeline {
                 ]
                 stepsYamlFile = "stepsSI.yml"
 
-                println colorMap.get('BG_LIGHT_GREEN') + "ШАГИ: " + 
+                println colorMap.get('BG_LIGHT_GREEN') + "ШАГИ: " + stepsYamlFile + colorMap.get('NORMAL')
+                
             }
         }
         }
