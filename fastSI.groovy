@@ -11,16 +11,9 @@ stepsYamlFile = "stepsSI.yml"
         stepsYaml.each { step ->
             if (stepsYaml[step].type.toString().toUpperCase().equals('PLSQL')){
                 def stepDescription = stepsYaml[step].description.toString()
-                def stepQuery = stepsYaml[step].query.toString()    
-                try {
-                    writeln 'Query: ' + stepQuery
-                    success = true
-                }                 
-                catch (Exception ex) {          
-                return ex
-                }
-            
+                def stepQuery = stepsYaml[step].query.toString()                                
             }
+            println stepQuery 
 
         }
 
