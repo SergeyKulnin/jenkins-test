@@ -1,0 +1,19 @@
+step: 01
+  description: 01. Проверка LOCK_INFO.
+  query: "declare
+          sq varchar2(20);
+          begin
+          select id into sq from table1;
+          dbms_output.put_line(sq);
+          end;"
+  type: PLSQL
+step: 02
+  description: 02. Проверка job_queue.
+  query: >-
+          declare
+          sq varchar2(20);
+          begin
+          select id into sq from table1;
+          dbms_output.put_line(sq);
+          end;
+  type: PLSQL
