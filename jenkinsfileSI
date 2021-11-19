@@ -1,0 +1,25 @@
+pipeline {
+    agent {
+        lable 'masterLin'
+    }
+    options {
+        ansiColor('xterm')
+    }
+    stages {
+        stage('Установка параметров.'){
+            steps{
+            script{
+                enableCoordinator = false
+                colorMap = [
+                    "NORMAL"         : "\u001B[0m",
+                    "BG_LIGHT_GREEN" : "\u001B[1;42m"
+                ]
+                stepsYamlFile = "stepsSI.yml"
+
+                println colorMap.get('BG_LIGHT_GREEN') + "ШАГИ: " + 
+            }
+        }
+        }
+
+    }
+}
