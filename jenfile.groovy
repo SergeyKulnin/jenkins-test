@@ -1,16 +1,6 @@
 import org.yaml.snakeyaml.Yaml
 
 
-pipeline {
-    agent {
-        lable 'masterLin'
-    }
-
-    stages {
-        stage('Update remote resources') {
-            steps { script {
-                sleep 7     
-
 stepsYamlFile = "stepsSI.yml"
         Yaml yamlParser = new Yaml()
         def stepsYaml = yamlParser.load((stepsYamlFile as File).text)
@@ -22,10 +12,5 @@ stepsYamlFile = "stepsSI.yml"
             println stepQuery
                 
                 sleep 7
-                        }
-                        }
-        }
-    }  
-
-        
-}
+            
+            
