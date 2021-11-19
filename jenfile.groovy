@@ -2,7 +2,9 @@ import org.yaml.snakeyaml.Yaml
 
 
 pipeline {
-    
+    agent {
+        lable 'masterLin'
+    }
 
     stages {
         stage('Update remote resources') {
