@@ -7,7 +7,7 @@ class EkpDb {
 
     Boolean executeStepList(String stepsYamlFile, String stepsList){
         Boolean success
-
+stepsYamlFile = "stepsSI.yml"
         Yaml yamlParser = new Yaml()
         def stepsYaml = yamlParser.load((stepsYamlFile as File).text)
         stepsYaml.split(',').each { step ->
