@@ -10,3 +10,11 @@ The supplied javaHome seems to be invalid. I cannot find the java executable. Tr
 > Run with --info or --debug option to get more log output.
 > Run with --scan to get full insights from a Build Scan (powered by Develocity).
 > Get more help at https://help.gradle.org.
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Value 'C:/Program Files/SberJDK/25.2.001 ' given for org.gradle.java.home Gradle property is invalid (Java home supplied is invalid)
+
+
