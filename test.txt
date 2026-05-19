@@ -1,0 +1,12 @@
+PS C:\Users\08345244\db-reconciler-main> ./gradlew bootJar
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+The supplied javaHome seems to be invalid. I cannot find the java executable. Tried location: C:\Program Files\SberJRE\25.0.2\bin\java.exe
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
