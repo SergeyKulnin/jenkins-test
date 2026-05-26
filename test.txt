@@ -1,24 +1,106 @@
-BUILD FAILED in 2s
-PS C:\Users\08345244\db-reconciler-main> ./gradlew packageApp                                                                                                                                                                       
-
-> Task :compileJava UP-TO-DATE                                                                                                                                                                                                      
-Caught exception: Couldn't add watch, error = 1: C:\Users\08345244\db-reconciler-main
-
-> Task :packageApp FAILED
-Bundler Windows Application Image skipped because of a configuration problem: The configured main jar does not exist db-reconcilier.jar in the input directory 
-Advice to fix: The main jar must be specified relative to the input directory (not an absolute path), and must exist within that directory
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Execution failed for task ':packageApp'.
-> Process 'command 'C:\Program Files\SberJDK\25.2.001/bin/jpackage'' finished with non-zero exit value 1
-
-* Try:
-> Run with --stacktrace option to get the stack trace.
-> Run with --info or --debug option to get more log output.
-> Run with --scan to get full insights from a Build Scan (powered by Develocity).
-> Get more help at https://help.gradle.org.
-
-BUILD FAILED in 6s
-5 actionable tasks: 1 executed, 4 up-to-date
+C:\Users\08345244\ci03997879_admin_openshift_configuration\db-reconciler-main\building\db-reconsiler>run.bat --scan --tables=Z#USER
+15:18:30.409 [main] INFO  c.reconciler.ReconcilerApplication - Starting ReconcilerApplication v1.0.0 using Java 25.0.2 with PID 672 (C:\Users\08345244\ci03997879_admin_openshift_configuration\db-reconciler-main\building\db-reconsiler\db-reconciler.jar started by 08345244 in C:\Users\08345244\ci03997879_admin_openshift_configuration\db-reconciler-main\building\db-reconsiler)
+15:18:30.412 [main] INFO  c.reconciler.ReconcilerApplication - No active profile set, falling back to 1 default profile: "default"
+15:18:31.168 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reconciliationOrchestrator' defined in URL [jar:nested:/C:/Users/08345244/ci03997879_admin_openshift_configuration/db-reconciler-main/building/db-reconsiler/db-reconciler.jar/!BOOT-INF/classes/!/com/reconciler/service/ReconciliationOrchestrator.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'tableMetadataService' defined in URL [jar:nested:/C:/Users/08345244/ci03997879_admin_openshift_configuration/db-reconciler-main/building/db-reconsiler/db-reconciler.jar/!BOOT-INF/classes/!/com/reconciler/service/TableMetadataService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sourceDataSource' defined in class path resource [com/reconciler/config/AppConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'sourceDataSource' threw exception with message: java/lang/management/ManagementFactory
+15:18:31.200 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reconciliationOrchestrator' defined in URL [jar:nested:/C:/Users/08345244/ci03997879_admin_openshift_configuration/db-reconciler-main/building/db-reconsiler/db-reconciler.jar/!BOOT-INF/classes/!/com/reconciler/service/ReconciliationOrchestrator.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'tableMetadataService' defined in URL [jar:nested:/C:/Users/08345244/ci03997879_admin_openshift_configuration/db-reconciler-main/building/db-reconsiler/db-reconciler.jar/!BOOT-INF/classes/!/com/reconciler/service/TableMetadataService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sourceDataSource' defined in class path resource [com/reconciler/config/AppConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'sourceDataSource' threw exception with message: java/lang/management/ManagementFactory
+        at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+        at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1377)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1214)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+        at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+        at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289)
+        at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+        at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+        at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+        at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+        at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+        at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+        at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+        at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+        at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+        at com.reconciler.ReconcilerApplication.main(ReconcilerApplication.java:26)
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+        at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+        at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102)
+        at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64)
+        at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tableMetadataService' defined in URL [jar:nested:/C:/Users/08345244/ci03997879_admin_openshift_configuration/db-reconciler-main/building/db-reconsiler/db-reconciler.jar/!BOOT-INF/classes/!/com/reconciler/service/TableMetadataService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'sourceDataSource' defined in class path resource [com/reconciler/config/AppConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'sourceDataSource' threw exception with message: java/lang/management/ManagementFactory
+        at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+        at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1377)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1214)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+        at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+        at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289)
+        at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+        at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+        at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+        at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+        at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+        at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+        at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+        ... 25 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sourceDataSource' defined in class path resource [com/reconciler/config/AppConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'sourceDataSource' threw exception with message: java/lang/management/ManagementFactory
+        at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+        at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1357)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+        at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+        at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289)
+        at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+        at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+        at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573)
+        at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+        at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+        at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+        ... 39 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'sourceDataSource' threw exception with message: java/lang/management/ManagementFactory
+        at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199)
+        at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
+        at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
+        at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+        ... 52 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: java/lang/management/ManagementFactory
+        at org.postgresql.util.PGPropertyMaxResultBufferParser.adjustResultSize(PGPropertyMaxResultBufferParser.java:195)
+        at org.postgresql.util.PGPropertyMaxResultBufferParser.parseProperty(PGPropertyMaxResultBufferParser.java:42)
+        at org.postgresql.core.PGStream.setMaxResultBuffer(PGStream.java:773)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:141)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+        at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+        at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+        at org.postgresql.Driver.makeConnection(Driver.java:444)
+        at org.postgresql.Driver.connect(Driver.java:297)
+        at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+        at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+        at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+        at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+        at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+        at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+        at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:80)
+        at com.reconciler.config.AppConfig.buildHikariDataSource(AppConfig.java:71)
+        at com.reconciler.config.AppConfig.sourceDataSource(AppConfig.java:28)
+        at com.reconciler.config.AppConfig$$SpringCGLIB$$0.CGLIB$sourceDataSource$1(<generated>)
+        at com.reconciler.config.AppConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+        at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+        at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:348)
+        at com.reconciler.config.AppConfig$$SpringCGLIB$$0.sourceDataSource(<generated>)
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+        at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+        at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
+        ... 55 common frames omitted
+Caused by: java.lang.ClassNotFoundException: java.lang.management.ManagementFactory
+        at java.base/java.net.URLClassLoader.findClass(Unknown Source)
+        at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
+        at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107)
+        at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91)
+        at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
+        ... 81 common frames omitted
