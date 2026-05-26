@@ -1,42 +1,18 @@
-PS C:\Users\08345244\db-reconciler-main> ./gradlew packageApp
+BUILD FAILED in 2s
+PS C:\Users\08345244\db-reconciler-main> ./gradlew packageApp                                                                                                                                                                       
 
-> Configure project :
-w: file:///C:/Users/08345244/db-reconciler-main/build.gradle.kts:63:1: 'fun Project.task(name: String, vararg args: Pair<String, Any>): Task' is deprecated. Deprecated Gradle API.
-e: file:///C:/Users/08345244/db-reconciler-main/build.gradle.kts:63:1: Function invocation 'task(...)' expected.
-e: file:///C:/Users/08345244/db-reconciler-main/build.gradle.kts:63:6: None of the following candidates is applicable:
-fun <T : JavaToolchainResolver> JavaToolchainResolverRegistry.register(implementationType: KClass<T>): Unit
-fun <U : T, T : Any> PolymorphicDomainObjectContainer<T>.register(name: String, type: KClass<U>): NamedDomainObjectProvider<U>
-fun <reified T : Task> TaskContainer.register(name: String, vararg arguments: Any): TaskProvider<T>
-e: file:///C:/Users/08345244/db-reconciler-main/build.gradle.kts:64:5: Unresolved reference 'dependsOn'.
-e: file:///C:/Users/08345244/db-reconciler-main/build.gradle.kts:68:5: Unresolved reference 'commandLine'.
+> Task :compileJava UP-TO-DATE                                                                                                                                                                                                      
+Caught exception: Couldn't add watch, error = 1: C:\Users\08345244\db-reconciler-main
+
+> Task :packageApp FAILED
+Bundler Windows Application Image skipped because of a configuration problem: The configured main jar does not exist db-reconcilier.jar in the input directory 
+Advice to fix: The main jar must be specified relative to the input directory (not an absolute path), and must exist within that directory
 
 FAILURE: Build failed with an exception.
 
-* Where:
-Build file 'C:\Users\08345244\db-reconciler-main\build.gradle.kts' line: 63
-
 * What went wrong:
-Script compilation errors:
-
-  Line 63: task.register<Exec>("packageApp") {
-           ^ 'fun Project.task(name: String, vararg args: Pair<String, Any>): Task' is deprecated. Deprecated Gradle API.
-
-  Line 63: task.register<Exec>("packageApp") {
-           ^ Function invocation 'task(...)' expected.
-
-  Line 63: task.register<Exec>("packageApp") {
-                ^ None of the following candidates is applicable:
-                    fun <T : JavaToolchainResolver> JavaToolchainResolverRegistry.register(implementationType: KClass<T>): Unit
-                    fun <U : T, T : Any> PolymorphicDomainObjectContainer<T>.register(name: String, type: KClass<U>): NamedDomainObjectProvider<U>
-                    fun <reified T : Task> TaskContainer.register(name: String, vararg arguments: Any): TaskProvider<T>
-
-  Line 64:     dependsOn(tasks.bootJar)
-               ^ Unresolved reference 'dependsOn'.
-
-  Line 68:     commandLine(
-               ^ Unresolved reference 'commandLine'.
-
-5 errors
+Execution failed for task ':packageApp'.
+> Process 'command 'C:\Program Files\SberJDK\25.2.001/bin/jpackage'' finished with non-zero exit value 1
 
 * Try:
 > Run with --stacktrace option to get the stack trace.
@@ -44,4 +20,5 @@ Script compilation errors:
 > Run with --scan to get full insights from a Build Scan (powered by Develocity).
 > Get more help at https://help.gradle.org.
 
-BUILD FAILED in 2s
+BUILD FAILED in 6s
+5 actionable tasks: 1 executed, 4 up-to-date
